@@ -110,26 +110,8 @@ def handle_userinput(user_question):
             st.write(bot_template.replace(
                 "{{MSG}}", message.content), unsafe_allow_html=True)
 
-def init():
-    # Load the OpenAI API key from the environment variable
-    load_dotenv()
-    
-    # test that the API key exists
-    if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
-        print("OPENAI_API_KEY is not set")
-        exit(1)
-    else:
-        print("OPENAI_API_KEY is set")
-
-    # setup streamlit page
-    #st.set_page_config(
-     #   page_title="TA ChatGPT",
-      #  page_icon="🤖"
-    #)
-
 
 def app():
-    init()
     load_dotenv()
     #st.set_page_config(page_title="Chat with multiple PDFs",
                        #page_icon=":books:")
